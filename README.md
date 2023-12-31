@@ -1,7 +1,7 @@
 # Account Microservice
 This is a microservice project with below features.
 >**Account Operations**
-1. Create account
+>1. Create account
 2. Update account
 3. Get account
 **Transacton Operations**
