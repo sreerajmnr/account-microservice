@@ -1,23 +1,23 @@
 # Account Microservice
 This is a microservice project with below features.
->**Account Operations**
->1. Create account
->2. Update account
->3. Get account
+> **Account Operations**
+> 1. Create account
+> 2. Update account
+> 3. Get account
 >   
->**Transacton Operations**
->1. Perform account transaction
->2. Lists account transactions (paginated)
+> **Transacton Operations**
+> 1. Perform account transaction
+> 2. Lists account transactions (paginated)
 
 ## Technologies
--[Spring Boot 3](https://spring.io/projects/spring-boot/)
--[H2 Database](https://www.h2database.com/html/main.html)
--[Flywaydb](https://flywaydb.org/)
--[micrometer tracing](https://github.com/micrometer-metrics/tracing)
--[springdoc Open API](https://springdoc.org/)
--[Lombok](https://projectlombok.org/)
--[Testcontainers](https://java.testcontainers.org/)
--[REST-assured](https://rest-assured.io/)
+- [Spring Boot 3](https://spring.io/projects/spring-boot/)
+- [H2 Database](https://www.h2database.com/html/main.html)
+- [Flywaydb](https://flywaydb.org/)
+- [micrometer tracing](https://github.com/micrometer-metrics/tracing)
+- [springdoc Open API](https://springdoc.org/)
+- [Lombok](https://projectlombok.org/)
+- [Testcontainers](https://java.testcontainers.org/)
+- [REST-assured](https://rest-assured.io/)
 
 ## To build
 Execute the below command from the project root folder.
