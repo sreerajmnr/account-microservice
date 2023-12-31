@@ -6,8 +6,8 @@ This is a microservice project with below features.
 >3. Get account
 >   
 >**Transacton Operations**
->1. Peform account transaction
->2. Retrieve account transactions (paginated)
+>1. Perform account transaction
+>2. Lists account transactions (paginated)
 
 # To build
 Execute the below command from the project root folder.
