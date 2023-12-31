@@ -23,6 +23,7 @@ C:\workspace\java-projects\account-service>run.bat
 
 # Open API documention
 >Open API swagger UI link is given below.
+>
 >[Account Service API Documentation](http://localhost:9090/account-service/swagger-ui/index.html)
 
 # Postman collection for triggering the Service endpoints
