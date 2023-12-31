@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "2ac4d58f-6c41-480f-b6f6-73eefc0cabc5",
+		"name": "Account Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32017525"
+	},
+	"item": [
+		{
+			"name": "Test Exception Handler",
+			"item": [
+				{
+					"name": "transactions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en-US",
+								"type": "text"
+							},
+							{
+								"key": "X-Account-Number",
+								"value": "12345",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"transactionType\": \"DEPOSIT\",\r\n    \"transactionAccount\": \"\",\r\n    \"transactionAmount\": -1000.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/account-service/api/v1/accounts/urn:id:headers.x-account-number/transactions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"account-service",
+								"api",
+								"v1",
+								"accounts",
+								"urn:id:headers.x-account-number",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "transactions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "da",
+								"type": "text"
+							},
+							{
+								"key": "X-Account-Number",
+								"value": "12345",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/account-service/api/v1/accounts/urn:id:headers.x-account-number/transactions?pageLimit=10&pageStart=0",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"account-service",
+								"api",
+								"v1",
+								"accounts",
+								"urn:id:headers.x-account-number",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "pageLimit",
+									"value": "10"
+								},
+								{
+									"key": "pageStart",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transactions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en-US",
+								"type": "text"
+							},
+							{
+								"key": "X-Account-Number",
+								"value": "12345",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"transactionType\": \"DEPOSIT\",\r\n    \"transactionAccount\": \"12345\",\r\n    \"transactionAmount\": 1000.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/account-service/api/v1/accounts/urn:id:headers.x-account-number/transactions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"account-service",
+								"api",
+								"v1",
+								"accounts",
+								"urn:id:headers.x-account-number",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "accounts",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "da",
+								"type": "text"
+							},
+							{
+								"key": "X-Customer-Id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountNumber\": \"12345\",\r\n    \"branchCode\": \"1004\",\r\n    \"accountType\": \"SAVINGS\",\r\n    \"accountStatus\": \"ACTIVE\",\r\n    \"accountBalance\": 1000.00,\r\n    \"customerId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/account-service/api/v1/customers/urn:id:headers.x-customer-id/accounts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"account-service",
+								"api",
+								"v1",
+								"customers",
+								"urn:id:headers.x-customer-id",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accounts",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "da",
+								"type": "text"
+							},
+							{
+								"key": "X-Customer-Id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountNumber\": \"12345\",\r\n    \"branchCode\": \"1004\",\r\n    \"accountBalance\": 105.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/account-service/api/v1/customers/urn:id:headers.x-customer-id/accounts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"account-service",
+								"api",
+								"v1",
+								"customers",
+								"urn:id:headers.x-customer-id",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accounts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "da",
+								"type": "text"
+							},
+							{
+								"key": "X-Customer-Id",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "X-Account-Number",
+								"value": "12345",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountNumber\": \"12345\",\r\n    \"branchCode\": \"1004\",\r\n    \"accountType\": \"SAVINGS\",\r\n    \"accountStatus\": \"ACTIVE\",\r\n    \"accountBalance\": 100.0,\r\n    \"customerId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/account-service/api/v1/customers/urn:id:headers.x-customer-id/accounts/urn:id:headers.x-account-number",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"account-service",
+								"api",
+								"v1",
+								"customers",
+								"urn:id:headers.x-customer-id",
+								"accounts",
+								"urn:id:headers.x-account-number"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,25 @@
+{
+    "accountTransactions": [
+        {
+            "transactionId": 1,
+            "transactionType": "DEPOSIT",
+            "transactionDate": "2023-12-22T18:30:00.000+00:00",
+            "transactionAccount": "1234",
+            "transactionAmount": 100.00
+        },
+        {
+            "transactionId": 2,
+            "transactionType": "DEPOSIT",
+            "transactionDate": "2023-12-22T18:30:00.000+00:00",
+            "transactionAccount": "1234",
+            "transactionAmount": 200.00
+        },
+        {
+            "transactionId": 3,
+            "transactionType": "DEPOSIT",
+            "transactionDate": "2023-12-22T18:30:00.000+00:00",
+            "transactionAccount": "1234",
+            "transactionAmount": 300.00
+        }
+    ]
+}
