@@ -23,10 +23,12 @@ public final class AccountServiceImpl implements AccountService {
 	private AccountRepository accountRepository;
 
 	@Override
-	public void createAccount(final Optional<Account> account) {
+	public AccountResponse createAccount(final Optional<Account> account) {
 		Optional<AccountEntity> accountEntity = accountMapper.convertToEntity(account);
 		if (accountEntity.isPresent()) {
-			accountRepository.save(accountEntity.get());
+			return new AccountResponse(
+					accountMapper.convertToDto(
+							Optional.of(accountRepository.save(accountEntity.get()))));
 		} else {
 			throw new ResourceNotFoundException(ErrorType.RESOURCE_NOT_FOUND);
 		}
@@ -43,26 +45,29 @@ public final class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public void updateAccount(final Optional<Account> account) {
+	public AccountResponse updateAccount(final Optional<Account> account) {
 		Optional<AccountEntity> accountEntity = accountRepository.findByAccountNumber(
 				account.get().accountNumber());
 		if (accountEntity.isPresent()) {
 			accountEntity.get().setBranchCode(account.get().branchCode());
 			accountEntity.get().setAccountStatus(account.get().accountStatus());
 			accountEntity.get().setAccountBalance(account.get().accountBalance());
-			accountRepository.save(accountEntity.get());
+			return new AccountResponse(
+					accountMapper.convertToDto(
+							Optional.of(accountRepository.save(accountEntity.get()))));
 		} else {
 			throw new ResourceNotFoundException(ErrorType.RESOURCE_NOT_FOUND);
 		}
 	}
 
 	@Override
-	public void updateAccountBalance(final Optional<Account> account) {
+	public Optional<Account> updateAccountBalance(final Optional<Account> account) {
 		Optional<AccountEntity> accountEntity = accountRepository.findByAccountNumber(
 				account.get().accountNumber());
 		if (accountEntity.isPresent()) {
 			accountEntity.get().setAccountBalance(account.get().accountBalance());
-			accountRepository.save(accountEntity.get());
+			return accountMapper.convertToDto(
+					Optional.of(accountRepository.save(accountEntity.get())));
 		} else {
 			throw new ResourceNotFoundException(ErrorType.RESOURCE_NOT_FOUND);
 		}

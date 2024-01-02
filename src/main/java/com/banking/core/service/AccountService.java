@@ -7,12 +7,12 @@ import com.banking.core.model.dto.response.AccountResponse;
 
 public interface AccountService {
 
-	void createAccount(Optional<Account> account);
+	AccountResponse createAccount(Optional<Account> account);
 
 	AccountResponse getAccount(String accountNumber);
 
-	void updateAccount(Optional<Account> account);
+	AccountResponse updateAccount(Optional<Account> account);
 
-	void updateAccountBalance(Optional<Account> account);
+	Optional<Account> updateAccountBalance(Optional<Account> account);
 
 }

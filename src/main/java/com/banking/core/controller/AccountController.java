@@ -1,5 +1,7 @@
 package com.banking.core.controller;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -32,22 +34,23 @@ public final class AccountController {
 	private AccountService accountService;
 
 	@PostMapping("/customers/urn:id:headers.x-customer-id/accounts")
-	public ResponseEntity<?> createAccount(
+	public ResponseEntity<AccountResponse> createAccount(
 			@RequestHeader("X-Customer-Id") @NotNull @NotBlank final String customerId,
-			@Valid @RequestBody final Optional<Account> account) {
+			@Valid @RequestBody final Optional<Account> account) throws URISyntaxException {
 
-		accountService.createAccount(account);
-		LOGGER.info("Account created for the customer {}", customerId);
-		return ResponseEntity.noContent().build();
+		LOGGER.info("Creating account for the customer {}", customerId);
+		return ResponseEntity.created(
+				new URI("/api/v1/customers/urn:id:headers.x-customer-id"
+						+ "/accounts/urn:id:headers.x-account-number"))
+				.body(accountService.createAccount(account));
 	}
 
 	@PutMapping("/customers/urn:id:headers.x-customer-id/accounts")
-	public ResponseEntity<?> updateAccount(
+	public ResponseEntity<AccountResponse> updateAccount(
 			@RequestHeader("X-Customer-Id") @NotNull @NotBlank final String customerId,
 			@Valid @RequestBody final Optional<Account> account) {
 
-		accountService.updateAccount(account);
-		return ResponseEntity.noContent().build();
+		return ResponseEntity.ok(accountService.updateAccount(account));
 	}
 
 	@GetMapping("/customers/urn:id:headers.x-customer-id/accounts/urn:id:headers.x-account-number")

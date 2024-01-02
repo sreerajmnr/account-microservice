@@ -206,7 +206,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"accountNumber\": \"12345\",\r\n    \"branchCode\": \"1004\",\r\n    \"accountBalance\": 105.0\r\n}",
+							"raw": "{\r\n    \"accountNumber\": \"12345\",\r\n    \"branchCode\": \"1004\",\r\n    \"accountType\": \"SAVINGS\",\r\n    \"accountStatus\": \"ACTIVE\",\r\n    \"accountBalance\": 105.0\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

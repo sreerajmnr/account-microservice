@@ -31,6 +31,10 @@ Execute the "run.bat" file from the project root folder.
 C:\workspace\java-projects\account-service>run.bat
 ```
 
+## Health end point
+After starting the application we can see the health status using the below links or use it for configuring in container orchestration tools.
+>[Actuator health end point](http://localhost:9090/account-service/actuator/health)
+
 ## Open API documention
 Open API swagger UI link is given below.
 >
